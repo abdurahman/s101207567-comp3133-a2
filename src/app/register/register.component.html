@@ -1,0 +1,66 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+     <h2>Register</h2>
+    </div>
+    <form [formGroup]="registerForm"
+          class="example-form">
+      <div fxLayout="row"
+        fxLayoutGap="10px">
+        <div fxFlex="100%" >
+          <mat-form-field  class="example-full-width" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            formControlName="username"
+            matInput
+            placeholder="Username"
+            required
+            value="">
+            <mat-error *ngIf="registerForm.controls['username']">Please enter a username. </mat-error>
+        </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <div div fxFlex="100%">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <span matPrefix></span>
+            <input
+              formControlName="email"
+              type="email"
+              matInput
+              placeholder="example@gmail.com"
+              value=""
+            required>
+            <mat-icon
+              matSuffix
+              color="accent">email</mat-icon>
+            <mat-error *ngIf="registerForm.controls['email']">Please enter your Email. </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <mat-form-field  class="example-full-width" appearance="outline">
+          <mat-label class="password">Password</mat-label>
+          <input
+            formControlName="password"
+            name="password"
+            class="form-control"
+            matInput [type]="hide ? 'password' : 'text'"
+            placeholder="Enter your Password"
+            required
+            value=""/>
+            <button mat-icon-button matSuffix (click)="hide = !hide " color="primary"
+        [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+          <mat-error *ngIf="registerForm.controls['password']">Please enter a password</mat-error>
+        </mat-form-field>
+
+      </div>
+      <div>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Create Account</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

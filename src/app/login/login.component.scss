@@ -1,0 +1,40 @@
+mat-card{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 50px;
+}
+
+.header{
+  justify-content: center;
+  align-items: center;
+
+}
+h2{
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.full-widht{
+  width: 100%;
+
+}
+.button-row{
+  margin: 10px 0;
+}
+.flex-container{
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.aLink{
+color: cornflowerblue;
+}
+.abstand{
+  display: flex;
+  padding: 10px 0;
+
+}
+

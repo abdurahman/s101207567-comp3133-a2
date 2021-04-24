@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2>Sign In</h2>
+    </div>
+
+    <form (ngSubmit) ="onLogin()" name="loginForm" [formGroup]="loginForm" >
+    <div class="email-input">
+      <mat-form-field class="full-widht" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput required placeholder="Enter username">
+        <mat-error *ngIf="!loginForm.controls['username'].valid">
+          Username invalid, please try again
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="full-widht" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required/>
+        <button mat-icon-button matSuffix (click)="hide = !hide " color="primary"
+        [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.controls['password']">Password is invalid, please enter min length 6 characters</mat-error>
+      </mat-form-field>
+
+    </div>
+     <div class="button-row" >
+       <div class="flex-container" fxLayoutGap="10px">
+         <button mat-raised-button color="accent" (click)="onLogin()">Login</button>
+         <button routerLink="/register" mat-stroked-button color="primary" (click)="createNewAccount()">Register</button>
+       </div>
+     </div>
+    </form>
+
+  </mat-card-content>
+</mat-card>
+
+

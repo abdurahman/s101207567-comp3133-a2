@@ -1,0 +1,25 @@
+
+mat-card{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 50px;
+}
+h2{
+  font-weight: lighter;
+  font-size: 25px;
+}
+.header{
+  justify-content: center;
+  align-items: center;
+
+}
+
+.example-full-width {
+  width: 100%;
+}
+ button{
+   font-size: 15px;
+   margin-top: 10px;
+ }
